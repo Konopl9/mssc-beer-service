@@ -1,11 +1,14 @@
 package mishcma.springframework.msscbeerservice.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import mishcma.springframework.msscbeerservice.services.BeerService;
 import mishcma.springframework.msscbeerservice.web.model.BeerDto;
 import mishcma.springframework.msscbeerservice.web.model.BeerStyleEnum;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.mock.mockito.MockBeans;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -23,6 +26,9 @@ class BeerControllerTest {
 
     @Autowired
     ObjectMapper objectMapper;
+
+    @MockBean
+    BeerService beerService;
 
     @Test
     void getBeerById() throws Exception {
