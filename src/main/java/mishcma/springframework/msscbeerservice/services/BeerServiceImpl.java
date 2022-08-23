@@ -1,21 +1,24 @@
 package mishcma.springframework.msscbeerservice.services;
 
-import lombok.RequiredArgsConstructor;
 import mishcma.springframework.msscbeerservice.domain.Beer;
 import mishcma.springframework.msscbeerservice.repositories.BeerRepository;
 import mishcma.springframework.msscbeerservice.web.controller.NotFoundException;
 import mishcma.springframework.msscbeerservice.web.mappers.BeerMapper;
 import mishcma.springframework.msscbeerservice.web.model.BeerDto;
 import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
 
 import java.util.UUID;
 
+/**
+ * Created by jt on 2019-06-06.
+ */
 @RequiredArgsConstructor
 @Service
 public class BeerServiceImpl implements BeerService {
-
     private final BeerRepository beerRepository;
     private final BeerMapper beerMapper;
+
     @Override
     public BeerDto getById(UUID beerId) {
         return beerMapper.beerToBeerDto(
@@ -35,7 +38,7 @@ public class BeerServiceImpl implements BeerService {
         beer.setBeerName(beerDto.getBeerName());
         beer.setBeerStyle(beerDto.getBeerStyle().name());
         beer.setPrice(beerDto.getPrice());
-        beer.setUpc(beerDto.getUps());
+        beer.setUpc(beerDto.getUpc());
 
         return beerMapper.beerToBeerDto(beerRepository.save(beer));
     }
