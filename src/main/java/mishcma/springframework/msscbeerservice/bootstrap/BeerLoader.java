@@ -1,13 +1,13 @@
 package mishcma.springframework.msscbeerservice.bootstrap;
 
-import mishcma.springframework.msscbeerservice.domain.Beer;
 import mishcma.springframework.msscbeerservice.repositories.BeerRepository;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
 import java.util.UUID;
 
+/**
+ * Created by jt on 2019-05-17.
+ */
 //@Component
 public class BeerLoader implements CommandLineRunner {
 

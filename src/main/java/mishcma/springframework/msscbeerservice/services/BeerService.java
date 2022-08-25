@@ -1,6 +1,9 @@
 package mishcma.springframework.msscbeerservice.services;
 
 import mishcma.springframework.msscbeerservice.web.model.BeerDto;
+import mishcma.springframework.msscbeerservice.web.model.BeerPagedList;
+import mishcma.springframework.msscbeerservice.web.model.BeerStyleEnum;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -12,4 +15,6 @@ public interface BeerService {
     BeerDto saveNewBeer(BeerDto beerDto);
 
     BeerDto updateBeer(UUID beerId, BeerDto beerDto);
+
+    BeerPagedList listBeers(String beerName, BeerStyleEnum beerStyle, PageRequest of);
 }
