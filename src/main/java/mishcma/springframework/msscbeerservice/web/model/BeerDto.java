@@ -31,7 +31,7 @@ public class BeerDto {
 
     @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ssZ", shape=JsonFormat.Shape.STRING)
     @Null
-    private OffsetDateTime latModifiedDate;
+    private OffsetDateTime lastModifiedDate;
 
     @NotBlank
     private String beerName;
